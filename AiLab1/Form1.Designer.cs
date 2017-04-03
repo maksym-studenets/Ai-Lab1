@@ -37,9 +37,11 @@
             this.sectorsLabel = new System.Windows.Forms.Label();
             this.sectorsTextBox = new System.Windows.Forms.TextBox();
             this.convertToGrayScaleButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.divideButton = new System.Windows.Forms.Button();
             this.blackPixelLabel = new System.Windows.Forms.Label();
             this.blackPixelText = new System.Windows.Forms.TextBox();
+            this.xLabel = new System.Windows.Forms.Label();
+            this.yLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +94,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(420, 280);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // sectorsLabel
             // 
@@ -119,14 +122,15 @@
             this.convertToGrayScaleButton.UseVisualStyleBackColor = true;
             this.convertToGrayScaleButton.Click += new System.EventHandler(this.convertToGrayScaleButton_Click);
             // 
-            // button2
+            // divideButton
             // 
-            this.button2.Location = new System.Drawing.Point(573, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Divide";
-            this.button2.UseVisualStyleBackColor = true;
+            this.divideButton.Location = new System.Drawing.Point(573, 179);
+            this.divideButton.Name = "divideButton";
+            this.divideButton.Size = new System.Drawing.Size(133, 23);
+            this.divideButton.TabIndex = 5;
+            this.divideButton.Text = "Divide";
+            this.divideButton.UseVisualStyleBackColor = true;
+            this.divideButton.Click += new System.EventHandler(this.divideButton_Click);
             // 
             // blackPixelLabel
             // 
@@ -144,14 +148,34 @@
             this.blackPixelText.Size = new System.Drawing.Size(100, 20);
             this.blackPixelText.TabIndex = 7;
             // 
+            // xLabel
+            // 
+            this.xLabel.AutoSize = true;
+            this.xLabel.Location = new System.Drawing.Point(439, 37);
+            this.xLabel.Name = "xLabel";
+            this.xLabel.Size = new System.Drawing.Size(13, 13);
+            this.xLabel.TabIndex = 8;
+            this.xLabel.Text = "0";
+            // 
+            // yLabel
+            // 
+            this.yLabel.AutoSize = true;
+            this.yLabel.Location = new System.Drawing.Point(439, 64);
+            this.yLabel.Name = "yLabel";
+            this.yLabel.Size = new System.Drawing.Size(13, 13);
+            this.yLabel.TabIndex = 9;
+            this.yLabel.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 357);
+            this.Controls.Add(this.yLabel);
+            this.Controls.Add(this.xLabel);
             this.Controls.Add(this.blackPixelText);
             this.Controls.Add(this.blackPixelLabel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.divideButton);
             this.Controls.Add(this.convertToGrayScaleButton);
             this.Controls.Add(this.sectorsTextBox);
             this.Controls.Add(this.sectorsLabel);
@@ -179,9 +203,11 @@
         private System.Windows.Forms.Label sectorsLabel;
         private System.Windows.Forms.TextBox sectorsTextBox;
         private System.Windows.Forms.Button convertToGrayScaleButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button divideButton;
         private System.Windows.Forms.Label blackPixelLabel;
         private System.Windows.Forms.TextBox blackPixelText;
+        private System.Windows.Forms.Label xLabel;
+        private System.Windows.Forms.Label yLabel;
     }
 }
 

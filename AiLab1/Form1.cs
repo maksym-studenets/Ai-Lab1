@@ -69,5 +69,32 @@ namespace AiLab1
                 }
             }
         }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            xLabel.Text = e.X.ToString();
+            yLabel.Text = e.Y.ToString();
+        }
+
+        private void divideButton_Click(object sender, EventArgs e)
+        {
+            int sectorCount = Int32.Parse(sectorsTextBox.Text);
+
+            double[,] imageMatrix = new double[bitmap.Width, bitmap.Height];
+            int[] sectors = new int[sectorCount];
+            double sector = 180 / sectorCount;
+
+            int xx = 0;
+            double c = 0;
+            int blackValue = Color.Black.ToArgb();
+
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+
+                }
+            }
+        }
     }
 }
